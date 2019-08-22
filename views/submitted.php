@@ -24,14 +24,14 @@
         <div class="screen-body center">
             <div class="screen-body-item center">
                 <div class="app-title">
-                    <span>YOUR MESSAGE HAS BEEN SUCCESSFULLY SENT!</span>
+                    <span>YOUR FEEDBACK HAS BEEN SUCCESSFULLY SAVED!</span>
                 </div>
             </div>
         </div>
         <div class="screen-body center">
 
             <div class="screen-body-item">
-                <a href="/">Go back</a>
+                <a class="link" href="/">Go back</a>
             </div>
         </div>
     </div>

@@ -3,15 +3,13 @@
 
 namespace App\model;
 
-
 use App\Database\DBConnection;
 use mysql_xdevapi\Exception;
 
-class Contact
+class Feedback
 {
 
     private $db;
-
 
     public function __construct()
     {
@@ -64,9 +62,8 @@ class Contact
     public function getList()
     {
         try {
-
             $connection = $this->db->connection();
-            $query = "SELECT * FROM contact";
+            $query = "SELECT * FROM contact ORDER BY id DESC";
             $result = $connection->query($query);
 
             $res_arr = [];
@@ -78,7 +75,7 @@ class Contact
             $this->db->disconnect();
             return [
                 'code' => 800,
-                'message' => 'Successfully retreived',
+                'message' => 'Successfully retrieved',
                 'data' => $res_arr
             ];
         } catch (Exception $exception) {

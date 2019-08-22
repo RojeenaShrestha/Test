@@ -3,15 +3,11 @@
 
 namespace App\Router;
 
-
 use App\Template\Template;
 
 class Router
 {
 
-    /**
-     * Application constructor.
-     */
     public function __construct()
     {
         //
@@ -31,7 +27,7 @@ class Router
         //if path doesn't exist in routes, render 404 page
         if (!array_key_exists($path, $routes)) {
             $template = new Template();
-            $template->render("error.php");
+            $template->render("error.php", []);
         }
         echo call_user_func($routes[$path]);
     }

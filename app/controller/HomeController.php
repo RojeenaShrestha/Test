@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\model\Contact;
+use App\model\Feedback;
 use App\Template\Template;
 use App\Validator\Validator;
 
@@ -27,7 +27,7 @@ class HomeController
             $validator->name('message')->value($params['message'])->pattern('text')->required();
 
             if ($validator->isSuccess()) {
-                $contact = new Contact();
+                $contact = new Feedback();
                 $result = $contact->save($params);
                 if ($result['code'] == 800) {
                     $this->submitted();
@@ -45,9 +45,13 @@ class HomeController
 
     public function list()
     {
-        $contact = new Contact();
+        $contact = new Feedback();
         $list = $contact->getList();
-        return $this->template->render('list.php');
+        $data = [];
+        if($list['code'] == 800) {
+            $data['feedbacks'] = $list['data'];
+        }
+        return $this->template->render('list.php', $data);
     }
 
     public function submitted()
@@ -56,8 +60,9 @@ class HomeController
 
     }
 
-    public function error()
+    public function error($data=[])
     {
-        return $this->template->render('error.php');
+
+        return $this->template->render('error.php', $data);
     }
 }

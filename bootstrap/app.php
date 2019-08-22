@@ -8,26 +8,41 @@ require_once __DIR__ . '/../vendor/autoload.php';
 define('BASE_URL', __DIR__ . '/../');
 define('VIEW_PATH', __DIR__ . '/../views');
 
+
+/*
+ * Set Error reporting for multiple environments
+ *
+ * */
+switch (getenv("APP_ENV")) {
+    case 'local':
+    case 'staging':
+        error_reporting(E_ALL);
+        break;
+    case 'production':
+        error_reporting(0);
+        break;
+}
+
+/**
+ * Initializing Routes
+ */
 $app = new Router();
 
 $app->route('/', function () {
-    $appController = new HomeController();
-
-    return $appController->index();
+    return (new HomeController())->index();
 });
 
 $app->route('/list', function () {
-    $appController = new HomeController();
-
-    return $appController->list();
+    return (new HomeController())->list();
 });
 
 
 $app->route('/error', function () {
+    return (new HomeController())->error();
+});
 
-    $appController = new HomeController();
-
-    return $appController->error();
+$app->route('/submitted', function () {
+    return (new HomeController())->submitted();
 });
 
 

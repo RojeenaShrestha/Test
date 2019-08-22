@@ -28,11 +28,19 @@ class DBConnection
     }
 
 
+    /**
+     * Connection to the database
+     * @return mysqli
+     */
     public function connection()
     {
         return $this->connection;
     }
 
+
+    /** Closing the connection
+     * @return mysqli
+     */
     public function disconnect() {
         mysqli_close($this->connection);
         return $this->connection;

@@ -57,8 +57,8 @@
 
 
             <div class="screen-body">
-                <div class="screen-body-item">
-                    <a href="/list" class="app-form-button">View list</a>
+                <div class="screen-body-item center">
+                    <a href="/list" class="link screen-header-title">View Feedbacks</a>
                 </div>
             </div>
         </div>
