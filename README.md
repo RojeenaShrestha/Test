@@ -4,12 +4,20 @@ Conditions:
 • Backend code is written in core PHP. 
 • Database is MySQL. 
 
-### HOW TO RUN THIS PROJECT
-1. Clone the repo
-2. Go to the root directory and run
 
+### HOW TO RUN THIS PROJECT
+ Firstly, Clone the repo.
+
+### SETTING UP THE DATABASE
+Then import the MySQL database from `clickview.sql` on your local machine. 
+
+### CONFIGURE THE DATABASE CONNECTION
+Once, the database is imported simply check the configuration in the `.env` file. Please configure the username, password and others if necessary according to your local machine.
+
+#### RUNNING THE PROJECT
+Then go to the project root directory and run
 ```composer install```
-3. Then simply run the project by:
+Finally,  run the project by:
 
 ```php -S localhost:3000 -t public/ ```
 
