@@ -6,8 +6,9 @@
 </head>
 <body>
 List is here:
-<?php //foreach ($contacts as $contact) :?>
-<!---->
-<?php //endforeach; ?>
+<?php var_dump($list);?>
+<?php foreach ($lists as $contact) :?>
+    <p><?php echo $contact['full_name'] ?></p>
+<?php endforeach; ?>
 </body>
 </html>

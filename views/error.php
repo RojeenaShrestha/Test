@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>ERROR</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
         <div class="screen-body center">
             <div class="screen-body-item center">
                 <div class="app-title">
-                    <span>YOUR MESSAGE HAS BEEN SUCCESSFULLY SENT!</span>
+                    <span>OOPS, SOMETHING WENT WRONG!</span>
                 </div>
             </div>
         </div>

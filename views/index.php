@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form method="POST" action="/" class="background">
+<form method="POST" action="/" class="background" id="form">
     <div class="container">
         <div class="screen">
             <div class="screen-header">
@@ -26,10 +26,9 @@
             <div class="screen-body">
                 <div class="screen-body-item left">
                     <div class="app-title">
-                        <span>CONTACT</span>
-                        <span>US</span>
+                        <span>CLICKVIEW</span>
                     </div>
-                    <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+                    <div class="app-contact">SUBMITTED BY: KAYUB MAHJARJAN "kAy"</div>
                 </div>
                 <div class="screen-body-item">
                     <div class="app-form">
@@ -45,11 +44,11 @@
                         <div class="app-form-group">
                             <input required class="app-form-control" type="text" name="institute" placeholder="INSTITUTE NAME"/>
                         </div>
-                        <div class="app-form-group message">
-                            <input required class="app-form-control" type="text" name="message" placeholder="MESSAGE"/>
+                        <div class="app-form-group">
+                            <textarea name="message" class="app-form-control" required  cols="30" rows="10" placeholder="ENTER YOUR MESSAGE HERE..."></textarea>
                         </div>
                         <div class="app-form-group buttons">
-                            <button class="app-form-button">CANCEL</button>
+                            <button class="app-form-button" onclick="reset()">RESET</button>
                             <button class="app-form-button" type="submit">SEND</button>
                         </div>
                     </div>
@@ -57,8 +56,10 @@
             </div>
 
 
-            <div>
-                <a href="" class="app-form-button">View list</a>
+            <div class="screen-body">
+                <div class="screen-body-item">
+                    <a href="/list" class="app-form-button">View list</a>
+                </div>
             </div>
         </div>
     </div>
@@ -66,4 +67,11 @@
 
 
 </body>
+<script>
+    ( () => {
+        const reset = () => {
+            document.getElementById('form').reset();
+        }
+    })();
+</script>
 </html>

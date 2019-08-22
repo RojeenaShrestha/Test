@@ -11,14 +11,12 @@
       "App\\": "app/"
     },
     "files": [
-      "helper/helper.php",
-      "helper/Validator.php",
-      "config/database.php"
     ]
   },
   "require": {
     "php": ">=7",
     "ext-mysqli": "*",
-    "vlucas/phpdotenv": "^3.4"
+    "vlucas/phpdotenv": "^3.4",
+    "ext-mysql_xdevapi": "*"
   }
 }

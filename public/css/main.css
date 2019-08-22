@@ -5,11 +5,11 @@
 }
 
 body {
-    background: linear-gradient(to right, #ea1d6f 0%, #eb466b 100%);
+    background: linear-gradient(to right, #ff2683 0%, #eb466b 100%);
     font-size: 12px;
 }
 
-body, button, input {
+body, button, input, textarea {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     letter-spacing: 1.4px;
@@ -23,6 +23,10 @@ body, button, input {
     flex: 0 1 700px;
     margin: auto;
     padding: 10px;
+}
+
+.center {
+    text-align: center;
 }
 
 .screen {
@@ -112,16 +116,6 @@ body, button, input {
     font-size: 26px;
 }
 
-.app-title:after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 25px;
-    height: 4px;
-    background: #ea1d6f;
-}
 
 .app-contact {
     margin-top: auto;
@@ -163,7 +157,7 @@ body, button, input {
     border-bottom-color: #ddd;
 }
 
-.app-form-button {
+.app-form-button, a {
     background: none;
     border: none;
     color: #ea1d6f;
@@ -172,7 +166,7 @@ body, button, input {
     outline: none;
 }
 
-.app-form-button:hover {
+.app-form-button:hover, a:hover {
     color: #b9134f;
 }
 

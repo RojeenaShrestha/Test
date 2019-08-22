@@ -2,21 +2,21 @@
 
 namespace App\Controller;
 
-use App\Database\DBConnection;
 use App\model\Contact;
+use App\Template\Template;
 use App\Validator\Validator;
 
 class HomeController
 {
+    private $template;
+
     public function __construct()
     {
-
+        $this->template = new Template();
     }
 
     public function index()
     {
-
-
         $validator = new Validator();
         $params = $_POST;
         if ($params) {
@@ -27,17 +27,19 @@ class HomeController
             $validator->name('message')->value($params['message'])->pattern('text')->required();
 
             if ($validator->isSuccess()) {
-                echo "Validation ok!";
                 $contact = new Contact();
                 $result = $contact->save($params);
-                var_dump($result);
-                die();
+                if ($result['code'] == 800) {
+                    $this->submitted();
+                } else {
+                    $this->error();
+                }
             } else {
-                var_dump($validator->getErrors());
+                $this->error($validator->getErrors());
             }
 
         } else {
-            render('index.php');
+            return $this->template->render('index.php');
         }
     }
 
@@ -45,13 +47,17 @@ class HomeController
     {
         $contact = new Contact();
         $list = $contact->getList();
-        var_dump($list);
-        die();
-        render('list.php');
+        return $this->template->render('list.php');
     }
 
     public function submitted()
     {
-        render('submitted.php');
+        return $this->template->render('submitted.php');
+
+    }
+
+    public function error()
+    {
+        return $this->template->render('error.php');
     }
 }
