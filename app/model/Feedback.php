@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\model;
+namespace App\Model;
 
-use App\Database\DBConnection;
-use mysql_xdevapi\Exception;
+use App\Config\DBConnection;
+use Exception;
 
 class Feedback
 {

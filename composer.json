@@ -14,7 +14,6 @@
   "require": {
     "php": ">=7",
     "ext-mysqli": "*",
-    "vlucas/phpdotenv": "^3.4",
-    "ext-mysql_xdevapi": "*"
+    "vlucas/phpdotenv": "^3.4"
   }
 }

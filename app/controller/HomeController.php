@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\model\Feedback;
-use App\Template\Template;
-use App\Validator\Validator;
+use App\Model\Feedback;
+use App\Config\Template;
+use App\Helper\Validator;
 
 class HomeController
 {

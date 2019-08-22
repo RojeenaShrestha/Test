@@ -1,7 +1,8 @@
 <?php
 
 use App\Controller\HomeController;
-use App\Router\Router;
+use App\Config\Router;
+
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Database;
+namespace App\Config;
 
 use Dotenv;
 use mysqli;
@@ -11,7 +11,7 @@ class DBConnection
 
     public function __construct()
     {
-        $dotenv = Dotenv\Dotenv::create(__DIR__ . './../');
+        $dotenv = Dotenv\Dotenv::create(__DIR__ . './testPHP/');
         $dotenv->load();
 
         $servername = getenv('DB_HOST');

@@ -1,9 +1,8 @@
 <?php
 
 
-namespace App\Router;
+namespace App\Config;
 
-use App\Template\Template;
 
 class Router
 {
