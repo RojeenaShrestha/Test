@@ -11,7 +11,7 @@ class Database
 
     public function __construct()
     {
-        $dotenv = Dotenv\Dotenv::create(__DIR__ . './testPHP/');
+        $dotenv = Dotenv\Dotenv::create(__DIR__ . './../../');
         $dotenv->load();
 
         $servername = getenv('DB_HOST');
