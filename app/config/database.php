@@ -5,7 +5,7 @@ namespace App\Config;
 use Dotenv;
 use mysqli;
 
-class DBConnection
+class Database
 {
     private $connection;
 
@@ -41,7 +41,8 @@ class DBConnection
     /** Closing the connection
      * @return mysqli
      */
-    public function disconnect() {
+    public function disconnect()
+    {
         mysqli_close($this->connection);
         return $this->connection;
     }

@@ -3,7 +3,7 @@
 
 namespace App\Model;
 
-use App\Config\DBConnection;
+use App\Config\Database;
 use Exception;
 
 class Feedback
@@ -13,7 +13,7 @@ class Feedback
 
     public function __construct()
     {
-        $this->db = (new DBConnection());
+        $this->db = (new Database());
     }
 
     /**
