@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-<div class="container">
-    <div class="screen">
-        <div class="screen-header">
-            <div class="">
-                <div class="screen-header-button close"></div>
-                <div class="screen-header-button maximize"></div>
-                <div class="screen-header-button minimize"></div>
-            </div>
-            <div class="screen-header-title">Error!</div>
-            <div class="screen-header-right">
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-            </div>
-        </div>
-
+<?php @include("header.php" );?>
         <div class="screen-body center">
             <div class="screen-body-item center">
                 <div class="app-title">
@@ -35,13 +12,5 @@
                 </ul>
             </div>
         </div>
-        <div class="screen-body center">
 
-            <div class="screen-body-item">
-                <a class="link" href="/">Go back</a>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+<?php @include("footer.php" );?>

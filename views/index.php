@@ -1,77 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
 
-<form method="POST" action="/" class="background" id="form">
-    <div class="container">
-        <div class="screen">
-            <div class="screen-header">
-                <div class="screen-header-left">
-                    <div class="screen-header-button close"></div>
-                    <div class="screen-header-button maximize"></div>
-                    <div class="screen-header-button minimize"></div>
-                </div>
-                <div class="screen-header-right">
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                </div>
-            </div>
+<?php @include("header.php" );?>
 
-            <div class="screen-body">
-                <div class="screen-body-item left">
-                    <div class="app-title">
-                        <span>CLICKVIEW</span>
-                    </div>
-                    <div class="app-contact">SUBMITTED BY: KAYUB MAHJARJAN "kAy"</div>
+<div class="container contact-form">
+    <form method="POST" action="/" id="form">
+        <h3>Contact Us</h3>
+        <?php if($data){
+            foreach ($data as $element) { ?>
+                <li class=""><?php echo $element;?></li>
+            <?php }?>
+        <?php }?>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="first_name" class="form-control" placeholder="Your First Name *" value="" required/>
                 </div>
-                <div class="screen-body-item">
-                    <div class="app-form">
-                        <div class="app-form-group">
-                            <input required class="app-form-control" type="text" name="full_name" placeholder="NAME" value=""/>
-                        </div>
-                        <div class="app-form-group">
-                            <input required class="app-form-control" type="email" name="email" placeholder="EMAIL"/>
-                        </div>
-                        <div class="app-form-group">
-                            <input required class="app-form-control" type="tel" name="phone" placeholder="CONTACT NO"/>
-                        </div>
-                        <div class="app-form-group">
-                            <input required class="app-form-control" type="text" name="institute" placeholder="INSTITUTE NAME"/>
-                        </div>
-                        <div class="app-form-group">
-                            <textarea name="message" class="app-form-control" required  cols="30" rows="10" placeholder="ENTER YOUR MESSAGE HERE..."></textarea>
-                        </div>
-                        <div class="app-form-group buttons">
-                            <button class="app-form-button" onclick="reset()">RESET</button>
-                            <button class="app-form-button" type="submit">SEND</button>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <input type="text" name="last_name" class="form-control" placeholder="Your Last Name *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" class="form-control" placeholder="Your Phone Number *" value="" required/>
                 </div>
             </div>
-
-
-            <div class="screen-body">
-                <div class="screen-body-item center">
-                    <a href="/list" class="link screen-header-title">View Feedbacks</a>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="institute" class="form-control" placeholder="School/Institution Name *" value="" required/>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;" required></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <input type="submit" name="btnSubmit" class="btn btn-primary" value="Contact Us" />
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+    <div class="text-center py-3"><a href="/list" class="">View Customer Information</a></div>
+</div>
 
-
-</body>
-<script>
-    ( () => {
-        const reset = () => {
-            document.getElementById('form').reset();
-        }
-    })();
-</script>
-</html>
+<?php @include("footer.php" );?>

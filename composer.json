@@ -1,9 +1,9 @@
 {
-  "name": "kay/test-php",
+  "name": "rojeena/clickviewtest-php",
   "authors": [
     {
-      "name": "kAy",
-      "email": "kay.krazzie@gmail.com"
+      "name": "Rojeena",
+      "email": "rshrestha92@gmail.com"
     }
   ],
   "autoload": {

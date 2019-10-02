@@ -6,7 +6,7 @@ namespace App\Model;
 use App\Config\Database;
 use Exception;
 
-class Feedback
+class contact
 {
 
     private $db;
@@ -38,8 +38,8 @@ class Feedback
 
             $connection = $this->db->connection();
             foreach ($array as $item => $value) ${"$item"} = $this->safe($value);
-            $query = "INSERT INTO contact (full_name, email, institute_name, phone, message)";
-            $query .= "VALUES('{$full_name}', '{$email}', '{$institute}', '{$phone}', '{$message}')";
+            $query = "INSERT INTO contact (first_name,last_name, email, institute_name, phone, message)";
+            $query .= "VALUES('{$first_name}','{$last_name}', '{$email}', '{$institute}', '{$phone}', '{$message}')";
             $result = $connection->query($query);
             if ($result) {
                 return [
@@ -63,7 +63,7 @@ class Feedback
     {
         try {
             $connection = $this->db->connection();
-            $query = "SELECT * FROM contact ORDER BY id DESC";
+            $query = "SELECT first_name,last_name, email, institute_name, phone, message FROM contact ORDER BY id DESC";
             $result = $connection->query($query);
 
             $res_arr = [];

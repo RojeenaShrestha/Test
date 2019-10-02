@@ -1,53 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Test</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-<div class="container">
-    <div class="screen">
-        <div class="screen-header">
-            <div class="screen-header-left">
-                <div class="screen-header-button close"></div>
-                <div class="screen-header-button maximize"></div>
-                <div class="screen-header-button minimize"></div>
-            </div>
-            <div class="screen-header-title">Feedbacks</div>
-            <div class="screen-header-right">
-                <a class="link right" href="/">Go back</a>
-            </div>
-        </div>
+<?php @include("header.php" );?>
 
-        <div class=" center">
-            <div class="table-wrapper">
-                <?php if (sizeof($data['feedbacks'])) { ?>
-                    <table class="table table-striped">
-                        <tr>
-                            <th>No.</th>
-                            <th>Full Name</th>
-                            <th>Email</th>
-                            <th>Institute</th>
-                            <th>Phone</th>
-                            <th>Message</th>
-                        </tr>
-                        <?php foreach ($data['feedbacks'] as $feedback) { ?>
-                            <tr>
-                                <?php foreach ($feedback as $item) { ?>
-                                    <td><?php echo $item; ?></td>
-                                <?php } ?>
-                            </tr>
-                        <?php } ?>
-                    </table>
-                <?php } else { ?>
-                    <div class="screen-body-item">
-                    <div class="screen-header-title">No feedbacks yet!</div>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <h3 class="center">Customer Information</h3>
+    <a class="goback" href="/"> &laquo; Go back</a>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">School/ Institution</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Message</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        if(sizeof($data['contactlist'])) {
+            foreach ($data['contactlist'] as $key=>$list) { ?>
+                <tr>
+                    <td> <?php echo ++$key;?>
+                    <?php foreach ($list as $item) { ?>
+                        <td><?php echo $item; ?></td>
+                    <?php } ?>
+                </tr>
+            <?php }
+        } else { ?>
+            No customer Information
+            <?php }?>
+
+
+    </table>
+
 </div>
-</body>
-</html>
+
+<?php @include("footer.php" );?>

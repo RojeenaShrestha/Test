@@ -1,24 +1,13 @@
-# Clickview Task
-In this practical a simple contact form for potential customers was created. 
-Conditions: 
-• Backend code is written in core PHP. 
-• Database is MySQL. 
+# Programming Practical guide
 
+A simple contact form.
+Language Used PHP
+Database MySQL
 
-### HOW TO RUN THIS PROJECT
- Firstly, Clone the repo.
+ 1. Clone the repository.
+ 2. Create the database in your server or local.
+ 3. Import database named `contact.sql` in your server or local.
+ 4. Configure your database name, username and password in the file named `.env`.
+ 5. Run a command `composer install` and then `php -S localhost:8000 -t public/`. You can choose the port which is available.
+ 6. Open the url `http://localhost:8000` in your browser.
 
-### SETTING UP THE DATABASE
-Then import the MySQL database from `clickview.sql` on your local machine. 
-
-### CONFIGURE THE DATABASE CONNECTION
-Once, the database is imported simply check the configuration in the `.env` file. Please configure the username, password and others if necessary according to your local machine.
-
-#### RUNNING THE PROJECT
-Then go to the project root directory and run
-```composer install```
-Finally,  run the project by:
-
-```php -S localhost:3000 -t public/ ```
-
-Now open a browser and open the url ``http://localhost:3000`` 

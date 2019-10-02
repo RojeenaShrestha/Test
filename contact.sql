@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2019 at 03:03 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.0.31
+-- Generation Time: Oct 02, 2019 at 06:56 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `clickview`
+-- Database: `clickView`
 --
 
 -- --------------------------------------------------------
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
-  `full_name` varchar(100) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `institute_name` varchar(100) NOT NULL,
   `phone` int(11) NOT NULL,
@@ -41,10 +42,9 @@ CREATE TABLE `contact` (
 -- Dumping data for table `contact`
 --
 
-INSERT INTO `contact` (`id`, `full_name`, `email`, `institute_name`, `phone`, `message`) VALUES
-(32, 'Letha Casper', 'your.emaiaker29621@gmail.com', 'Alaska', 923, 'Nemo sequi ut eum consectetur.'),
-(33, 'Zola Lakin', 'your.emaifaker31131@gmail.com', 'Arkansas', 420, 'Corporis nostrum quisquam tempora doloribus non qui commodi cumque id.'),
-(34, 'Freeman Harber', 'your.emaiaker56982@gmail.co', 'Michigan', 124, 'Sunt in alias quas pariatur omnis ipsa voluptates magni.');
+INSERT INTO `contact` (`id`, `first_name`, `last_name`, `email`, `institute_name`, `phone`, `message`) VALUES
+(41, 'Dummy', 'Dump', 'dummy@gmail.com', 'dummy dump', 123456789, 'dummy'),
+(42, 'Tump', 'Trait', 'trait@gmail.com', 'tump trait', 123456789, 'tump');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +64,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

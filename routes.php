@@ -1,12 +1,12 @@
 <?php
 
-use App\Controller\HomeController;
+use App\Controller\Controller;
 use App\Config\Router;
 
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-define('BASE_URL', __DIR__ . '/../');
+define('BASE_URL', __DIR__ . '/');
 define('VIEW_PATH', __DIR__ . '/../views');
 
 
@@ -30,20 +30,11 @@ switch (getenv("APP_ENV")) {
 $app = new Router();
 
 $app->route('/', function () {
-    return (new HomeController())->index();
+    return (new Controller())->index();
 });
 
 $app->route('/list', function () {
-    return (new HomeController())->list();
-});
-
-
-$app->route('/error', function () {
-    return (new HomeController())->error();
-});
-
-$app->route('/submitted', function () {
-    return (new HomeController())->submitted();
+    return (new Controller())->Contactlist();
 });
 
 
